@@ -1,0 +1,24 @@
+{
+  "name": "nodejs_learn",
+  "version": "1.0.0",
+  "description": "this is for learn",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dongphuong",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parse": "^0.4.0",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "googleapis": "^59.0.0",
+    "lodash": "^4.17.20",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "request": "^2.88.2",
+    "router": "^1.3.5"
+  }
+}

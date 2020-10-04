@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>fake</title>
+    <meta name="google-signin-client_id"
+        content="556144615408-njbar2mvs8riqf08i53fk27vve4bm77c.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+<body>
+    <form name="aspnetForm" method="post" action="/go" id="aspnetForm">
+        <div>
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+            <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                value="/wEPDwUJMTEyODI5MDc0D2QWAmYPZBYCAgMPZBYEAgEPFgIeB1Zpc2libGVoZAIFD2QWAgIBD2QWAgIBDxBkZBYBZmRk5JghAtZ/UKOIkeKRoQLyBpS+3qVTMXOCaJ49DaCjCgs=" />
+        </div>
+        <div>
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+                value="/wEdAAee+cE28Um+jOTcl5cJhZ7v1ZWqR6ljRJGb9mEZktA3XKqU7CaSg+wPXz/3l6S9ZjiSD1GKPUsR9KXpKj3jOOWku49L3JqFCWR9GGhMPmiNS0ZIBGGuozU0xJ5NRQcV2LFvqmBvaEIHX/Biv0pDwM/1tCQIlHwpkJ9ng6qcxAHs1RqA/y7kyJuki37w5FREMMc=" />
+        </div>
+
+
+        <select name="ctl00$mainContent$ddlCampus"
+            onchange="javascript:setTimeout('__doPostBack(\'ctl00$mainContent$ddlCampus\',\'\')', 0)"
+            id="ctl00_mainContent_ddlCampus" class="btn btn-default">
+            <option selected="selected" value="">Select
+                Campus</option>
+            <option value="3">FU-H&#242;a Lạc</option>
+            <option value="4">FU-Hồ Ch&#237; Minh
+            </option>
+            <option value="5">FU-Đ&#224; Nẵng</option>
+            <option value="6">FU-Cần Thơ</option>
+        </select>
+
+        <script type="text/javascript">
+            var theForm = document.forms['aspnetForm'];
+            if (!theForm) {
+                theForm = document.aspnetForm;
+            }
+            function __doPostBack(eventTarget, eventArgument) {
+                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                    theForm.__EVENTTARGET.value = eventTarget;
+                    theForm.__EVENTARGUMENT.value = eventArgument;
+                    theForm.submit();
+                }
+            }
+        </script>
+        <span id="ctl00_mainContent_lblMessage" class="information"></span>
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    </form>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            var email = profile.getEmail();
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log("ID Token: " + id_token);
+            if (id_token != null) {
+                signOut();
+                window.location.href("http://fap.fpt.edu.vn/Default.aspx?token=" + id_token);
+            }
+
+        }
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+
+            });
+        }
+    </script>
+</body>
+
+</html>
